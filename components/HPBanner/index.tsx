@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 import { FaGamepad } from 'react-icons/fa';
 import { FaShoppingCart } from 'react-icons/fa';
 
@@ -8,8 +7,13 @@ const HPBanner = () => {
     <>
       <section
         id="home"
-        className="relative z-10 overflow-hidden pt-[120px] pb-16 md:pt-[150px] md:pb-[100px] xl:pt-[180px] xl:pb-[140px] 2xl:pt-[210px] 2xl:pb-[180px]"
-        style={{ background: 'linear-gradient(to bottom, rgb(13 158 255), rgb(74 108 247 / 0.05))' }}
+        className="relative z-10 overflow-hidden pt-[120px] pb-12 md:pt-[150px] md:pb-[80px] xl:pt-[180px] xl:pb-[140px] 2xl:pt-[210px] 2xl:pb-[180px]"
+        style={{
+          backgroundImage: `url('/images/banner/main-banner.png')`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+          backgroundSize: 'cover'
+        }}
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
