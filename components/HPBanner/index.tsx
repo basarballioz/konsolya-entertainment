@@ -35,7 +35,7 @@ const HPBanner = () => {
                   <Link
                     href="#"
                     target="_blank"
-                    className="flex items-center gap-x-1 rounded-md bg-primary py-5 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    className="flex items-center gap-x-1 rounded-md bg-primary/90 py-5 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/75"
                   >
                     <FaShoppingCart />
                     See Modals
@@ -43,7 +43,7 @@ const HPBanner = () => {
                   <Link
                     href="#"
                     target="_blank"
-                    className="flex text-white items-center gap-x-1 rounded-md bg-black/20 py-5 px-8 text-base font-semibold text-black duration-300 ease-in-out hover:bg-black/30"
+                    className="flex text-white items-center gap-x-1 rounded-md bg-black/90 py-5 px-8 text-base font-semibold text-black duration-300 ease-in-out hover:bg-black/75"
                   >
                     <FaGamepad />
                     Quick Rent!
