@@ -14,11 +14,35 @@ const menuData: Menu[] = [
     newTab: false,
   },
   {
-    id: 3,
-    title: "Contact",
-    path: "/contact",
+    id: 33,
+    title: "Blog",
+    path: "/blog",
     newTab: false,
-  }
+  },
+  {
+    id: 4,
+    title: "More",
+    newTab: false,
+    submenu: [
+      {
+        id: 43,
+        title: "Blog Grid Page",
+        path: "/blog",
+        newTab: false,
+      },
+      {
+        id: 47,
+        title: "Sign Up Page",
+        path: "/signup",
+        newTab: false,
+      },
+      {
+        id: 48,
+        title: "Error Page",
+        path: "/error",
+        newTab: false,
+      },
+    ],
+  },
 ];
-
 export default menuData;
