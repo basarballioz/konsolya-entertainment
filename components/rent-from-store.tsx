@@ -43,7 +43,7 @@ export default function RentFromStore() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Card className="w-full">
             <CardHeader>
-              <CardTitle>Behçet Cafe</CardTitle>
+              <CardTitle>Random Cafe</CardTitle>
               <CardDescription>Her türlü PS4, PS5 kiralama işleri.</CardDescription>
             </CardHeader>
             <CardContent>
@@ -51,7 +51,7 @@ export default function RentFromStore() {
                 alt="Store"
                 className="w-full h-auto"
                 height="200"
-                src="/placeholder.svg"
+                src="/images/placeholder.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
