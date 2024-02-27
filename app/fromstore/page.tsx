@@ -8,7 +8,7 @@ const rentStore = () => {
         <>
             <Breadcrumb
                 pageName="Rent From Store"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+                description="Rent a console from any store for a seamless gaming adventure. Choose from the latest consoles and games for a flexible, commitment-free experience."
             />
             <RentFromStore />
         </>

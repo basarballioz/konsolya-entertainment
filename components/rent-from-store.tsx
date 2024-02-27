@@ -6,7 +6,7 @@ export default function RentFromStore() {
   return (
     <div className="bg-black p-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-white text-3xl font-bold mb-4 text-center">Search Stores</h1>
+        <h1 className="text-white text-3xl font-bold mb-4 text-center">Find Nearest Store</h1>
         <div className="flex justify-between items-center space-x-4 mb-8">
           <Select>
             <SelectTrigger id="city">
@@ -38,7 +38,7 @@ export default function RentFromStore() {
               <SelectItem value="chelsea">Beşyol</SelectItem>
             </SelectContent>
           </Select>
-          <Button className="bg-red-600 text-white">Search</Button>
+          <Button className="bg-red-600 text-white">Find</Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Card className="w-full">
