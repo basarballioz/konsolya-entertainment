@@ -7,13 +7,13 @@ const SingleBlog = ({ item }) => {
     <>
       <div
         className="relative overflow-hidden rounded-md bg-white shadow-one">
-        <Link href="/" className="relative block h-[320px] w-full">
+        <Link href={item.url} className="relative block h-[320px] w-full">
           <Image src={image} alt="image" fill />
         </Link>
         <div className="p-6 sm:p-8 md:py-8 md:px-6 lg:p-8 xl:py-8 xl:px-5 2xl:p-8">
           <h3>
             <Link
-              href="/"
+              href={item.url}
               className="mb-4 block text-xl font-bold text-black hover:text-primary sm:text-2xl"
             >
               {title}
