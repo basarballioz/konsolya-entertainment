@@ -1,0 +1,9 @@
+@media (max-width: 640px) {
+    .finderContainer {
+        flex-wrap: wrap;
+        width: 75%;
+        margin: 8px auto 12px auto;
+        row-gap: 12px;
+        justify-content: center;
+    }
+}

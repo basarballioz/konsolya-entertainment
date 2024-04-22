@@ -1,13 +1,14 @@
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
+import styles from './index.module.css';
 
 export default function RentFromStore() {
   return (
     <div className="bg-black p-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-white text-3xl font-bold mb-4 text-center">Find Nearest Store</h1>
-        <div className="flex justify-between items-center md:space-x-4 md:mb-8 sm:space-x-4 sm:mb-8">
+        <div className={`${styles.finderContainer} flex justify-between items-center md:space-x-4 md:mb-8 sm:space-x-4 sm:mb-8`}>
           <Select>
             <SelectTrigger id="city">
               <SelectValue placeholder="City" />
@@ -38,7 +39,7 @@ export default function RentFromStore() {
               <SelectItem value="Beşyol">Beşyol</SelectItem>
             </SelectContent>
           </Select>
-          <Button className="bg-red-600 text-white">Find</Button>
+          <Button className="text-white">Find</Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Card className="w-full">
@@ -61,11 +62,11 @@ export default function RentFromStore() {
             </CardContent>
             <CardFooter className="flex justify-between">
               <Button variant="outline">İncele</Button>
-              <Button>Seç</Button>
+              <Button className="text-white">Seç</Button>
             </CardFooter>
           </Card>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
