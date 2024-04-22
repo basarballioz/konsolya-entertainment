@@ -1,9 +1,26 @@
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
-import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
+
+import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { faker } from '@faker-js/faker';
 import styles from './index.module.css';
 
+const generateRandomStores = (count: number) => {
+  const stores = [];
+  for (let i = 0; i < count; i++) {
+    const store = {
+      name: faker.lorem.word(),
+      description: faker.lorem.sentence(),
+      imageUrl: faker.image.image(),
+    };
+    stores.push(store);
+  }
+  return stores;
+};
+
 export default function RentFromStore() {
+  const stores = generateRandomStores(5);
+
   return (
     <div className="bg-black p-4">
       <div className="max-w-4xl mx-auto">
@@ -42,31 +59,33 @@ export default function RentFromStore() {
           <Button className="text-white">Find</Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Card className="w-full">
-            <CardHeader>
-              <CardTitle>Random Cafe</CardTitle>
-              <CardDescription>Her türlü PS4, PS5 kiralama işleri.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <img
-                alt="Store"
-                className="w-full h-auto"
-                height="200"
-                src="/images/placeholder.svg"
-                style={{
-                  aspectRatio: "300/200",
-                  objectFit: "cover",
-                }}
-                width="300"
-              />
-            </CardContent>
-            <CardFooter className="flex justify-between">
-              <Button variant="outline">İncele</Button>
-              <Button className="text-white">Seç</Button>
-            </CardFooter>
-          </Card>
+          {stores.map((store, index) => (
+            <Card key={index} className="w-full">
+              <CardHeader>
+                <CardTitle>{store.name}</CardTitle>
+                <CardDescription>{store.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <img
+                  alt="Store"
+                  className="w-full h-auto"
+                  height="200"
+                  src={store.imageUrl}
+                  style={{
+                    aspectRatio: "300/200",
+                    objectFit: "cover",
+                  }}
+                  width="300"
+                />
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Button variant="outline">Details</Button>
+                <Button className="text-white">Select</Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </div>
-    </div >
-  )
+    </div>
+  );
 }
