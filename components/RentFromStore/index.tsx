@@ -7,15 +7,15 @@ export default function RentFromStore() {
     <div className="bg-black p-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-white text-3xl font-bold mb-4 text-center">Find Nearest Store</h1>
-        <div className="flex justify-between items-center space-x-4 mb-8">
+        <div className="flex justify-between items-center md:space-x-4 md:mb-8 sm:space-x-4 sm:mb-8">
           <Select>
             <SelectTrigger id="city">
               <SelectValue placeholder="City" />
             </SelectTrigger>
             <SelectContent position="popper">
-              <SelectItem value="new-york">İstanbul</SelectItem>
-              <SelectItem value="los-angeles">Ankara</SelectItem>
-              <SelectItem value="chicago">Bursa</SelectItem>
+              <SelectItem value="İstanbul">İstanbul</SelectItem>
+              <SelectItem value="Ankara">Ankara</SelectItem>
+              <SelectItem value="Bursa">Bursa</SelectItem>
             </SelectContent>
           </Select>
           <Select>
@@ -23,9 +23,9 @@ export default function RentFromStore() {
               <SelectValue placeholder="District" />
             </SelectTrigger>
             <SelectContent position="popper">
-              <SelectItem value="downtown">Küçükçekmece</SelectItem>
-              <SelectItem value="uptown">Büyükçekmece</SelectItem>
-              <SelectItem value="midtown">Bakırköy</SelectItem>
+              <SelectItem value="Küçükçekmece">Küçükçekmece</SelectItem>
+              <SelectItem value="Büyükçekmece">Büyükçekmece</SelectItem>
+              <SelectItem value="Bakırköy">Bakırköy</SelectItem>
             </SelectContent>
           </Select>
           <Select>
@@ -33,9 +33,9 @@ export default function RentFromStore() {
               <SelectValue placeholder="Neighborhood" />
             </SelectTrigger>
             <SelectContent position="popper">
-              <SelectItem value="soho">Atakent</SelectItem>
-              <SelectItem value="greenwich">İstasyon</SelectItem>
-              <SelectItem value="chelsea">Beşyol</SelectItem>
+              <SelectItem value="Atakent">Atakent</SelectItem>
+              <SelectItem value="İstasyon">İstasyon</SelectItem>
+              <SelectItem value="Beşyol">Beşyol</SelectItem>
             </SelectContent>
           </Select>
           <Button className="bg-red-600 text-white">Find</Button>

@@ -1,6 +1,6 @@
 "use client";
 
-import RentFromStore from "@/components/rent-from-store";
+import RentFromStore from "@/components/RentFromStore";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 const rentStore = () => {
