@@ -4,7 +4,7 @@ import RentModalData from "./RentModalData";
 
 const RentModals = () => {
   return (
-    <section id="item" className="bg-primary/5 py-16 md:py-20 lg:py-28">
+    <section id="rentModals" className="bg-primary/5 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
           title="Different Options"

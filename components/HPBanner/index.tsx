@@ -1,6 +1,13 @@
+"use client";
 import Link from "next/link";
-import { FaGamepad } from 'react-icons/fa';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaGamepad, FaShoppingCart } from 'react-icons/fa';
+
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const HPBanner = () => {
   return (
@@ -32,17 +39,12 @@ const HPBanner = () => {
                   New generation console rental platform. We bring you consoles without the need to purchase them.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <Link
-                    href="#"
-                    target="_blank"
-                    className="flex items-center gap-x-1 rounded-md bg-primary/90 py-5 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/75"
-                  >
+                  <button onClick={() => scrollToSection("rentModals")} className="flex items-center gap-x-1 rounded-md bg-primary/90 py-5 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/75">
                     <FaShoppingCart />
                     See Modals
-                  </Link>
+                  </button>
                   <Link
-                    href="#"
-                    target="_blank"
+                    href="/fromstore"
                     className="flex text-white items-center gap-x-1 rounded-md bg-black/90 py-5 px-8 text-base font-semibold text-black duration-300 ease-in-out hover:bg-black/75"
                   >
                     <FaGamepad />

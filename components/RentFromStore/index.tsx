@@ -1,5 +1,5 @@
+import { useRouter } from 'next/navigation';
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
-
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { faker } from '@faker-js/faker';
@@ -9,9 +9,10 @@ const generateRandomStores = (count: number) => {
   const stores = [];
   for (let i = 0; i < count; i++) {
     const store = {
+      id: i + 1,
       name: faker.lorem.word(),
       description: faker.lorem.sentence(),
-      imageUrl: faker.image.image(),
+      imageUrl: faker.image.url(),
     };
     stores.push(store);
   }
@@ -19,7 +20,9 @@ const generateRandomStores = (count: number) => {
 };
 
 export default function RentFromStore() {
-  const stores = generateRandomStores(5);
+  const router = useRouter();
+  const stores = generateRandomStores(4);
+  const hasStores = stores.length > 0;
 
   return (
     <div className="bg-black p-4">
@@ -58,33 +61,37 @@ export default function RentFromStore() {
           </Select>
           <Button className="text-white">Find</Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {stores.map((store, index) => (
-            <Card key={index} className="w-full">
-              <CardHeader>
-                <CardTitle>{store.name}</CardTitle>
-                <CardDescription>{store.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <img
-                  alt="Store"
-                  className="w-full h-auto"
-                  height="200"
-                  src={store.imageUrl}
-                  style={{
-                    aspectRatio: "300/200",
-                    objectFit: "cover",
-                  }}
-                  width="300"
-                />
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button variant="outline">Details</Button>
-                <Button className="text-white">Select</Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+        {hasStores ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {stores.map((store, index) => (
+              <Card key={index} className="w-full">
+                <CardHeader>
+                  <CardTitle>{store.name}</CardTitle>
+                  <CardDescription>{store.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <img
+                    alt="Store"
+                    className="w-full h-auto"
+                    height="200"
+                    src={store.imageUrl}
+                    style={{
+                      aspectRatio: "300/200",
+                      objectFit: "cover",
+                    }}
+                    width="300"
+                  />
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                  <Button variant="outline">Details</Button>
+                  <Button className="text-white" onClick={() => router.push(`/store/${store.id}`)}>Select</Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <p className="text-white text-center mt-8">Please select a location to see stores.</p>
+        )}
       </div>
     </div>
   );
