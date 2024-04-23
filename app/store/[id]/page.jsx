@@ -9,8 +9,8 @@ let productImage = faker.image.url();
 export default function StoreDetails() {
     return (<div>
         <Breadcrumb
-            pageName="Store Details"
-            description="Store Details of Store"
+            pageName="Store Detail Page"
+            description="You can find detailed information about the store on this page."
         />
         <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
