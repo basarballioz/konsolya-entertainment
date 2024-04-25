@@ -1,6 +1,6 @@
 import { Feature } from "@/types/feature";
 
-const SingleFeature = ({ feature }: { feature: Feature }) => {
+const featureItem = ({ feature }: { feature: Feature }) => {
   const { icon, title, paragraph } = feature;
   return (
     <div className="w-full">
@@ -19,4 +19,4 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
   );
 };
 
-export default SingleFeature;
+export default featureItem;

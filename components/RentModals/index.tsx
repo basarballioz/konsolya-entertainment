@@ -1,5 +1,5 @@
 import SectionTitle from "../Common/SectionTitle";
-import SingleBlog from "./SingleBlog";
+import RentItem from "./rentItem";
 import RentModalData from "./RentModalData";
 
 const RentModals = () => {
@@ -15,7 +15,7 @@ const RentModals = () => {
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
           {RentModalData.map((item) => (
             <div key={item.id} className="w-full">
-              <SingleBlog item={item} />
+              <RentItem item={item} />
             </div>
           ))}
         </div>

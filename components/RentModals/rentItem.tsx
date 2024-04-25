@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const SingleBlog = ({ item }) => {
+const rentItem = ({ item }) => {
   const { title, image, paragraph } = item;
   return (
     <>
@@ -28,4 +28,4 @@ const SingleBlog = ({ item }) => {
   );
 };
 
-export default SingleBlog;
+export default rentItem;
