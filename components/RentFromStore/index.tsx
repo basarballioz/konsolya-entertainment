@@ -1,5 +1,9 @@
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { faker } from '@faker-js/faker';
@@ -24,42 +28,80 @@ export default function RentFromStore() {
   const stores = generateRandomStores(4);
   const hasStores = stores.length > 0;
 
+  const [city, setCity] = useState('');
+  const [district, setDistrict] = useState('');
+  const [neighborhood, setNeighborhood] = useState('');
+
+  const handleChange = (event, type) => {
+    const value = event.target.value;
+    if (type === 'city') {
+      setCity(value);
+      setDistrict('');
+      setNeighborhood('');
+    } else if (type === 'district') {
+      setDistrict(value);
+    } else if (type === 'neighborhood') {
+      setNeighborhood(value);
+    }
+  };
+
+
   return (
     <div className="bg-black p-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-white text-3xl font-bold mb-4 text-center">Find Nearest Store</h1>
         <div className={`${styles.finderContainer} flex justify-between items-center md:space-x-4 md:mb-8 sm:space-x-4 sm:mb-8`}>
-          <Select>
-            <SelectTrigger id="city">
-              <SelectValue placeholder="City" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              <SelectItem value="İstanbul">İstanbul</SelectItem>
-              <SelectItem value="Ankara">Ankara</SelectItem>
-              <SelectItem value="Bursa">Bursa</SelectItem>
-            </SelectContent>
-          </Select>
-          <Select>
-            <SelectTrigger id="district">
-              <SelectValue placeholder="District" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              <SelectItem value="Küçükçekmece">Küçükçekmece</SelectItem>
-              <SelectItem value="Büyükçekmece">Büyükçekmece</SelectItem>
-              <SelectItem value="Bakırköy">Bakırköy</SelectItem>
-            </SelectContent>
-          </Select>
-          <Select>
-            <SelectTrigger id="neighborhood">
-              <SelectValue placeholder="Neighborhood" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              <SelectItem value="Atakent">Atakent</SelectItem>
-              <SelectItem value="İstasyon">İstasyon</SelectItem>
-              <SelectItem value="Beşyol">Beşyol</SelectItem>
-            </SelectContent>
-          </Select>
-          <Button className="text-white">Find</Button>
+
+          <FormControl fullWidth>
+            <InputLabel id="city-select-label">City</InputLabel>
+            <Select
+              sx={{ backgroundColor: '#fff' }}
+              labelId="city-dropdown-select-label"
+              id="city-selector"
+              value={city}
+              label="City"
+              onChange={(e) => handleChange(e, 'city')}
+              fullWidth
+            >
+              <MenuItem value={"İstanbul"}>İstanbul</MenuItem>
+              <MenuItem value={"Ankara"}>Ankara</MenuItem>
+              <MenuItem value={"İzmir"}>İzmir</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl fullWidth>
+            <InputLabel id="district-select-label">District</InputLabel>
+            <Select
+              sx={{ backgroundColor: '#fff' }}
+              labelId="district-dropdown-select-label"
+              id="district-selector"
+              value={district}
+              label="District"
+              onChange={(e) => handleChange(e, 'district')}
+              fullWidth
+            >
+              <MenuItem value={"Atakent"}>Atakent</MenuItem>
+              <MenuItem value={"Bakırköy"}>Bakırköy</MenuItem>
+              <MenuItem value={"Sinanoba"}>Sinanoba</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl fullWidth>
+            <InputLabel id="neighborhood-select-label">Neighborhood</InputLabel>
+            <Select
+              sx={{ backgroundColor: '#fff' }}
+              labelId="neighborhood-dropdown-select-label"
+              id="neighborhood-selector"
+              value={neighborhood}
+              label="Neighborhood"
+              onChange={(e) => handleChange(e, 'neighborhood')}
+              fullWidth
+            >
+              <MenuItem value={"Kartaltepe"}>Kartaltepe</MenuItem>
+              <MenuItem value={"Lounge"}>Lounge</MenuItem>
+              <MenuItem value={"Evostar"}>Evostar</MenuItem>
+            </Select>
+          </FormControl>
         </div>
         {hasStores ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

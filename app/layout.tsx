@@ -1,3 +1,4 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../styles/index.css";
@@ -11,9 +12,11 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <AppRouterCacheProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
