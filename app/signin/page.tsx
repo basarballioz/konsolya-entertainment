@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Head from 'next/head';
+import { signInWithGoogle } from "@/connections/signIn";
 
 const SigninPage = () => {
   return (
@@ -8,6 +11,7 @@ const SigninPage = () => {
         <title>Sign In Page | Your go-to destination for gaming excitement at home </title>
         <meta name="description" content="This is Sign In Page for Konsolya.com" />
       </Head>
+
       <section className="relative z-10 overflow-hidden pb-16 pt-36 md:pb-20 lg:pb-28 lg:pt-[180px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
@@ -19,7 +23,7 @@ const SigninPage = () => {
                 <p className="mb-11 text-center text-base font-medium text-body-color">
                   Login to your account
                 </p>
-                <button className="border-stroke dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none">
+                <button onClick={() => signInWithGoogle()} className="border-stroke dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none">
                   <span className="mr-3">
                     <svg
                       width="20"
