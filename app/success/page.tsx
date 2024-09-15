@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from 'react';
 import Head from 'next/head';
-import { signOut } from "@/connections/signOut";
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { signOut } from "@/connections/signOut";
 import { supabase } from "@/lib/supabaseClient";
 
 const SuccessPage = () => {
