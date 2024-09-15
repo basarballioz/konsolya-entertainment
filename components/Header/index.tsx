@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import menuData from "./menuData";
+import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
 const Header = () => {
+  const router = useRouter(); 
+  
   // NAVBAR TOGGLER (ON-OFF)
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
@@ -61,6 +63,7 @@ const Header = () => {
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     setUser(null);
+    router.push('/');
   };
 
   return (
